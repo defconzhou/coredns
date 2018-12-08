@@ -23,13 +23,13 @@ var extCases = []struct {
 	{
 		Qname: "svc1.testns.example.org.", Rcode: dns.RcodeSuccess,
 		Msg: []msg.Service{
-			msg.Service{Host: "1.2.3.4", Port: 80, TTL: 5, Key: "/c/testns/svc1/testns/svc1"},
+			msg.Service{Host: "1.2.3.4", Port: 80, TTL: 5, Key: "/c/org/example/testns/svc1"},
 		},
 	},
 	{
 		Qname: "svc6.testns.example.org.", Rcode: dns.RcodeSuccess,
 		Msg: []msg.Service{
-			msg.Service{Host: "1:2::5", Port: 80, TTL: 5, Key: "/c/testns/svc1/testns/svc1"},
+			msg.Service{Host: "1:2::5", Port: 80, TTL: 5, Key: "/c/org/example/testns/svc1"},
 		},
 	},
 	{
@@ -38,7 +38,7 @@ var extCases = []struct {
 	{
 		Qname: "_http._tcp.svc1.testns.example.com.", Rcode: dns.RcodeSuccess,
 		Msg: []msg.Service{
-			msg.Service{Host: "1.2.3.4", Port: 80, TTL: 5, Key: "/c/testns/svc1/testns/svc1"},
+			msg.Service{Host: "1.2.3.4", Port: 80, TTL: 5, Key: "/c/org/example/testns/svc1"},
 		},
 	},
 	{

@@ -26,7 +26,7 @@ type Externaler interface {
 	External(request.Request) ([]msg.Service, int)
 }
 
-// External resolves Ingress and Loadbalance IPs from kubernetes clusters
+// External resolves Ingress and Loadbalance IPs from kubernetes clusters.
 type External struct {
 	Next  plugin.Handler
 	Zones []string
@@ -77,7 +77,7 @@ func (e *External) ServeDNS(ctx context.Context, w dns.ResponseWriter, r *dns.Ms
 		m.Ns = []dns.RR{e.soa(state)}
 	}
 
-	// If we did had records, but queries for the wrong type return a nodata response.
+	// If we did have records, but queried for the wrong qtype return a nodata response.
 	if len(m.Answer) == 0 {
 		m.Ns = []dns.RR{e.soa(state)}
 	}

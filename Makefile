@@ -9,7 +9,7 @@ PRESUBMIT:=core coremain plugin test request
 MAKEPWD:=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 CGO_ENABLED:=0
 
-.PHONY all
+.PHONY: all
 all: coredns
 
 .PHONY: coredns
